@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 # vim:fenc=utf-8
 #
-# Copyright © 2017-09-22 michael_yin
 #
 
 from sqlalchemy import create_engine, Column, Table, ForeignKey
@@ -38,9 +37,8 @@ def create_table(engine):
 class JobsDB(DeclarativeBase):
     __tablename__ = "jobs_table"
 
-    id = Column(Integer, primary_key=True)
     location = Column('location', Text())
     details = Column('details', Text())
-    company_name = Column('company_name', String(100))
-    position = Column('position', Text())
+    company_name = Column('company_name', String(100), primary_key=True)
+    position = Column('position', String(100), primary_key=True)
     age = Column('age', String(100))

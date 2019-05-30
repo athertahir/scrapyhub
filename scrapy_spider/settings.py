@@ -89,5 +89,6 @@ ITEM_PIPELINES = {
 # HTTPCACHE_IGNORE_HTTP_CODES = []
 # HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
-CONNECTION_STRING = "mysql://{user}:{passwd}@{host}:{port}/{db_name}?charset=utf8".format(
-    user="root", passwd="", host="localhost", port="3306", db_name="jobs_toscrape", )
+CONN_STRING = "mysql://{user}:{pwd}@{host}:{port}/{db}?charset=utf8"
+CONNECTION_STRING = CONN_STRING.format(
+    user="root", pwd="", host="localhost", port="3306", db="jobs_toscrape", )

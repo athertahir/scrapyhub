@@ -13,8 +13,7 @@ from scrapy_spider.models import JobsDB, db_connect, create_table
 class ScrapySpiderPipeline(object):
     def __init__(self):
         """
-        Initializes database connection and sessionmaker.
-        Creates deals table.
+        Initializes database connection.
         """
         try:
             engine = db_connect()
@@ -24,10 +23,8 @@ class ScrapySpiderPipeline(object):
             print('[Error:] Failed to connect to database: ' + repr(error))
 
     def process_item(self, item, spider):
-        """Save deals in the database.
-
+        """
         This method is called for every item pipeline component.
-
         """
         session = self.Session()
         jobsdb = JobsDB()
@@ -42,7 +39,7 @@ class ScrapySpiderPipeline(object):
             session.commit()
         except Exception as error:
             session.rollback()
-            print('[Error:] Failed to save data in database ')
+            print('[Error:] Failed to save data in database ' + repr(error))
             #  raise
         finally:
             session.close()
