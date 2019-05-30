@@ -35,13 +35,14 @@ class ScrapySpiderPipeline(object):
         jobsdb.company_name = item["company_name"]
         jobsdb.position = item["position"]
         jobsdb.location = item["location"]
+        jobsdb.details = item["details"]
 
         try:
             session.add(jobsdb)
             session.commit()
         except Exception as error:
             session.rollback()
-            print('[Error:] Failed to save data in database: ' + repr(error))
+            print('[Error:] Failed to save data in database ')
             #  raise
         finally:
             session.close()

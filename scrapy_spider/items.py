@@ -10,6 +10,7 @@ import scrapy
 
 class JobItem(scrapy.Item):
     location = scrapy.Field()
+    details = scrapy.Field()
     company_name = scrapy.Field()
     position = scrapy.Field()
     age = scrapy.Field()

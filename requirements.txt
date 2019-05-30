@@ -1,6 +1,5 @@
-Scrapy==1.4.0
+Scrapy
 service-identity==17.0.0
 simplegeneric==0.8.1
 SQLAlchemy==1.1.14
 mysqlclient
-guppy==0.1.10

@@ -40,6 +40,7 @@ class JobsDB(DeclarativeBase):
 
     id = Column(Integer, primary_key=True)
     location = Column('location', Text())
+    details = Column('details', Text())
     company_name = Column('company_name', String(100))
     position = Column('position', Text())
     age = Column('age', String(100))
