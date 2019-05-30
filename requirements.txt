@@ -2,4 +2,3 @@ Scrapy
 service-identity
 SQLAlchemy
 mysqlclient
-pypiwin32
